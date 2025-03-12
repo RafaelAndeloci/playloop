@@ -11,18 +11,18 @@ const logoVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+          "bg-primary text-primary-foreground shadow hover:bg-primary/90 focus-visible:ring-cyan-400"
       },
       size: {
         default: "size-9 p-3",
         sm: "size-8 rounded-md p-2 text-xs",
-        lg: "size-10 rounded-md p-4",
-      },
+        lg: "size-10 rounded-md p-4"
+      }
     },
     defaultVariants: {
       variant: "default",
-      size: "default",
-    },
+      size: "default"
+    }
   }
 );
 
@@ -30,7 +30,7 @@ export interface LogoProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof logoVariants> {
   asChild?: boolean;
-  withText?: boolean;
+  withText?: string;
 }
 
 const Logo = React.forwardRef<HTMLButtonElement, LogoProps>(
@@ -49,7 +49,7 @@ const Logo = React.forwardRef<HTMLButtonElement, LogoProps>(
           {asChild ? children : <Origami />}
         </Comp>
         {withText && (
-          <p className="text-xl font-semibold tracking-tight">PlayLoop</p>
+          <p className="text-xl font-semibold tracking-tight">{withText}</p>
         )}
       </>
     );
