@@ -84,7 +84,7 @@ export function FilterCarousel({
                     {/* NOTE: Maybe use the <Link /> Component wrapping the <Badge /> to make it prefetch and make it faster */}
                     <Badge
                       variant={value === item.value ? "default" : "secondary"}
-                      className="cursor-pointer whitespace-nowrap rounded-lg px-3 py-1 text-sm"
+                      className="cursor-pointer select-none whitespace-nowrap rounded-lg px-3 py-1 text-sm"
                     >
                       {item.label}
                     </Badge>

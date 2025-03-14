@@ -2,6 +2,7 @@ import { Logo } from "@/components/ui/logo";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { AuthButton } from "@/modules/auth/components/auth-button";
 import Link from "next/link";
+import { StudioUploadModal } from "../studio-upload-modal";
 
 export const StudioNavbar = () => {
   return (
@@ -21,6 +22,7 @@ export const StudioNavbar = () => {
         <div className="flex-1" />
 
         <div className="flex flex-shrink-0 items-center gap-4">
+          <StudioUploadModal />
           <AuthButton />
         </div>
       </div>
